@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .play-btn {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="music-controls">
+        <button class="play-btn" onclick="togglePlay()">Play Music ♫</button>
+    </div>
+    <audio id="backgroundMusic">
+        <source src="music/ANDMESH - ANUGERAH TERINDAH (OFFICIAL MUSIC VIDEO).mp3" audio/mp3">
+    </audio>
+    <canvas id="pinkboard"></canvas>
+    <script src="script.js"></script>
+    <script>
+        const audio = document.getElementById('backgroundMusic');
+        const playBtn = document.querySelector('.play-btn');
+        
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = 'Pause Music ⏸';
+            } else {
+                audio.pause();
+                playBtn.textContent = 'Play Music ♫';
+            }
+        }
+    </script>
+</body>
+</html>
